@@ -1,13 +1,11 @@
 package utils
 
-import "main.go/pkg/models"
-
-type Admin struct {
-	Name  string `json:"name" gorm:"validate:required"`
-	Email string `json:"email" gorm:"validate:required"`
+type LoginResponse struct {
+	UserID int    `json:"user_id"`
+	Name   string `json:"name"`
+	Email  string `json:"email"`
 }
 type TokenLOgin struct {
-	Admin        models.Login
-	Token        string
-	RefreshToken string
+	LoginResponse LoginResponse
+	Token         string
 }

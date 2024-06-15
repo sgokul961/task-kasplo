@@ -18,8 +18,8 @@ func InitializeAPI(cfg config.Config) (*apis.ServerHTTP, error) {
 	wire.Build(
 		db.ConnectDatabase,
 		repo.NewLoginRepo,
-		usecase.NewLoginUseCase,
-		handler.NewLoginHandler,
+		usecase.NewUseCase,
+		handler.NewHandler,
 		apis.NewServerHttp,
 		helper.NewHelper,
 	)
